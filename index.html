@@ -30,25 +30,25 @@
           <span class="axis-label axis-color-l">L</span>
           <div class="axis-line"><div class="axis-line-inner axis-gradient-ln"></div></div>
           <span class="axis-label axis-color-n">N</span>
-          <div class="axis-desc"><span>Live</span><span>Net</span></div>
+          <div class="axis-desc"><span>Live（現場）</span><span>Net（ネット）</span></div>
         </div>
         <div class="axis-row">
           <span class="axis-label axis-color-s">S</span>
           <div class="axis-line"><div class="axis-line-inner axis-gradient-sd"></div></div>
           <span class="axis-label axis-color-d">D</span>
-          <div class="axis-desc"><span>Spread</span><span>Deep</span></div>
+          <div class="axis-desc"><span>Spread（共有）</span><span>Deep（没入）</span></div>
         </div>
         <div class="axis-row">
           <span class="axis-label axis-color-p">P</span>
           <div class="axis-line"><div class="axis-line-inner axis-gradient-pu"></div></div>
           <span class="axis-label axis-color-u">U</span>
-          <div class="axis-desc"><span>Push</span><span>Universe</span></div>
+          <div class="axis-desc"><span>Oshi（推し）</span><span>World（世界）</span></div>
         </div>
         <div class="axis-row">
           <span class="axis-label axis-color-r">R</span>
           <div class="axis-line"><div class="axis-line-inner axis-gradient-rw"></div></div>
           <span class="axis-label axis-color-w">W</span>
-          <div class="axis-desc"><span>Research</span><span>Wave</span></div>
+          <div class="axis-desc"><span>Research（研究）</span><span>Wave（ノリ）</span></div>
         </div>
       </div>
 
@@ -71,11 +71,11 @@
       <div id="quiz-question-area" class="quiz-question-area">
         <p id="quiz-question-text" class="quiz-question-text"></p>
         <div class="quiz-options">
-          <button class="quiz-option" data-value="5" onclick="selectAnswer(5)">とてもそう</button>
-          <button class="quiz-option" data-value="4" onclick="selectAnswer(4)">どちらかといえばそう</button>
-          <button class="quiz-option" data-value="3" onclick="selectAnswer(3)">どちらとも言えない</button>
-          <button class="quiz-option" data-value="2" onclick="selectAnswer(2)">どちらかといえば違う</button>
-          <button class="quiz-option" data-value="1" onclick="selectAnswer(1)">全く違う</button>
+          <button class="quiz-option" onclick="selectAnswer(5)">とてもそう</button>
+          <button class="quiz-option" onclick="selectAnswer(4)">どちらかといえばそう</button>
+          <button class="quiz-option" onclick="selectAnswer(3)">どちらとも言えない</button>
+          <button class="quiz-option" onclick="selectAnswer(2)">どちらかといえば違う</button>
+          <button class="quiz-option" onclick="selectAnswer(1)">全く違う</button>
         </div>
       </div>
     </div>
@@ -84,34 +84,41 @@
   <!-- ===== RESULT PAGE ===== -->
   <div id="page-result" class="page">
     <div class="container">
-      <p class="result-label">あなたのオタタイプは…</p>
-
-      <div class="result-char-wrapper">
-        <img id="result-char-img" class="result-char-img" src="" alt="" />
+      <div id="result-hero" class="result-hero" data-group="">
+        <p class="result-label">あなたのオタクタイプは…</p>
+        <div class="result-char-wrapper">
+          <img id="result-char-img" class="result-char-img" src="" alt="" />
+        </div>
+        <div id="result-code" class="result-code"></div>
+        <h2 id="result-name" class="result-name"></h2>
+        <span id="result-group-label" class="result-group-label"></span>
       </div>
 
-      <div id="result-code" class="result-code"></div>
-      <h2 id="result-name" class="result-name"></h2>
-      <p id="result-description" class="result-description"></p>
+      <div class="result-description-card">
+        <p id="result-description" class="result-description"></p>
+        <div class="result-aruaru">
+          <p class="result-aruaru-title">💡 あるある</p>
+          <ul id="result-aruaru-list" class="result-aruaru-list"></ul>
+        </div>
+      </div>
 
-      <div id="result-axes" class="result-axes"></div>
+      <div id="result-axes" class="result-axes-card"></div>
 
       <div id="result-compat" class="result-compat">
-        <div class="compat-item compat-good">
+        <div class="compat-item">
           <span class="compat-label">🤝 相性◎</span>
           <span id="compat-good" class="compat-type"></span>
         </div>
-        <div class="compat-item compat-bad">
+        <div class="compat-item">
           <span class="compat-label">⚡ 天敵</span>
           <span id="compat-bad" class="compat-type"></span>
         </div>
       </div>
 
       <button id="btn-share" class="btn-share" onclick="shareToX()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         Xでシェアする
       </button>
-
       <button class="btn-retry" onclick="retryQuiz()">もう一度診断する</button>
     </div>
   </div>
