@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTATYPE - オタク16タイプ診断</title>
+  <meta name="description" content="16問であなたのオタクタイプを診断！4つの軸で分類する、オタク16タイプ診断。" />
+  <meta property="og:title" content="OTATYPE - オタク16タイプ診断" />
+  <meta property="og:description" content="16問であなたのオタクタイプを診断！4つの軸で分類する、オタク16タイプ診断。" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OTATYPE - オタク16タイプ診断" />
+  <meta name="twitter:description" content="16問であなたのオタクタイプを診断！4つの軸で分類する、オタク16タイプ診断。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== LANDING PAGE ===== -->
+  <div id="page-landing" class="page active">
+    <div class="container">
+      <h1 class="landing-title">
+        <span class="title-en">OTATYPE</span>
+        <span class="title-sub">オタク16タイプ診断</span>
+      </h1>
+
+      <div class="axes-preview">
+        <div class="axis-row">
+          <span class="axis-label axis-color-l">L</span>
+          <div class="axis-line"><div class="axis-line-inner axis-gradient-ln"></div></div>
+          <span class="axis-label axis-color-n">N</span>
+          <div class="axis-desc"><span>Live</span><span>Net</span></div>
+        </div>
+        <div class="axis-row">
+          <span class="axis-label axis-color-s">S</span>
+          <div class="axis-line"><div class="axis-line-inner axis-gradient-sd"></div></div>
+          <span class="axis-label axis-color-d">D</span>
+          <div class="axis-desc"><span>Spread</span><span>Deep</span></div>
+        </div>
+        <div class="axis-row">
+          <span class="axis-label axis-color-p">P</span>
+          <div class="axis-line"><div class="axis-line-inner axis-gradient-pu"></div></div>
+          <span class="axis-label axis-color-u">U</span>
+          <div class="axis-desc"><span>Push</span><span>Universe</span></div>
+        </div>
+        <div class="axis-row">
+          <span class="axis-label axis-color-r">R</span>
+          <div class="axis-line"><div class="axis-line-inner axis-gradient-rw"></div></div>
+          <span class="axis-label axis-color-w">W</span>
+          <div class="axis-desc"><span>Research</span><span>Wave</span></div>
+        </div>
+      </div>
+
+      <button id="btn-start" class="btn-primary" onclick="startQuiz()">診断スタート</button>
+      <p class="landing-note">全16問・所要時間：約2〜3分</p>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ PAGE ===== -->
+  <div id="page-quiz" class="page">
+    <div class="container">
+      <div class="quiz-header">
+        <span id="quiz-progress" class="quiz-progress">1 / 16</span>
+        <span id="quiz-axis" class="quiz-axis"></span>
+      </div>
+      <div class="quiz-progress-bar">
+        <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+      </div>
+
+      <div id="quiz-question-area" class="quiz-question-area">
+        <p id="quiz-question-text" class="quiz-question-text"></p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="5" onclick="selectAnswer(5)">とてもそう</button>
+          <button class="quiz-option" data-value="4" onclick="selectAnswer(4)">どちらかといえばそう</button>
+          <button class="quiz-option" data-value="3" onclick="selectAnswer(3)">どちらとも言えない</button>
+          <button class="quiz-option" data-value="2" onclick="selectAnswer(2)">どちらかといえば違う</button>
+          <button class="quiz-option" data-value="1" onclick="selectAnswer(1)">全く違う</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESULT PAGE ===== -->
+  <div id="page-result" class="page">
+    <div class="container">
+      <p class="result-label">あなたのオタタイプは…</p>
+
+      <div class="result-char-wrapper">
+        <img id="result-char-img" class="result-char-img" src="" alt="" />
+      </div>
+
+      <div id="result-code" class="result-code"></div>
+      <h2 id="result-name" class="result-name"></h2>
+      <p id="result-description" class="result-description"></p>
+
+      <div id="result-axes" class="result-axes"></div>
+
+      <div id="result-compat" class="result-compat">
+        <div class="compat-item compat-good">
+          <span class="compat-label">🤝 相性◎</span>
+          <span id="compat-good" class="compat-type"></span>
+        </div>
+        <div class="compat-item compat-bad">
+          <span class="compat-label">⚡ 天敵</span>
+          <span id="compat-bad" class="compat-type"></span>
+        </div>
+      </div>
+
+      <button id="btn-share" class="btn-share" onclick="shareToX()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Xでシェアする
+      </button>
+
+      <button class="btn-retry" onclick="retryQuiz()">もう一度診断する</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
