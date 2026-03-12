@@ -35,10 +35,10 @@ const CHAR_IMAGES = {
 
 // ===== TYPE GROUP CONFIG =====
 const GROUP_CONFIG = {
-  "LP": { label: "現場の推し戦士", color: "#e07b39" },
-  "NP": { label: "ネットの推し職人", color: "#d64d7e" },
-  "LU": { label: "現場の沼探検家", color: "#3baa7e" },
-  "NU": { label: "ネットの沼住人", color: "#7b61c4" },
+  "LP": { label: "現場の一途勢", color: "#e07b39" },
+  "NP": { label: "ネットの一途勢", color: "#d64d7e" },
+  "LU": { label: "現場の探検家", color: "#3baa7e" },
+  "NU": { label: "ネットの住人", color: "#7b61c4" },
 };
 
 function getGroup(code) {
@@ -51,46 +51,46 @@ function getCharImage(code) {
 
 // ===== 16 TYPES DATA =====
 const TYPES = {
-  // ──── Live × Oshi（現場の推し戦士）────
+  // ──── Live × Oshi（現場の一途勢）────
   "SLPR": {
-    name: "チケ戦の生存者",
-    description: "チケットの争奪戦を毎回生き抜く戦略家。狙った席は逃さない。遠征のルートや宿の手配も完璧で、グッズの在庫状況まで把握している。現場に行くための準備が趣味みたいなもの。",
+    name: "遠征の指揮官",
+    description: "好きなもののためなら遠征計画を完璧に立てる戦略家。チケット確保から交通手段、宿の手配まで抜かりがない。「準備してる時が一番楽しい」まである。情報共有も得意で、仲間からの信頼が厚い。",
     aruaru: [
-      "チケット発売日は全集中で挑む",
-      "遠征の交通費は「必要経費」",
-      "物販の待ち時間を正確に予測できる",
+      "遠征の計画を立てるのが異常に得意",
+      "交通費は「必要経費」と本気で思っている",
+      "当日のスケジュールを分単位で組む",
     ],
     compatGood: "SNPR",
     compatBad: "DNUW",
     emoji: "🎫"
   },
   "SLPW": {
-    name: "コールの人間兵器",
-    description: "ライブ会場で一番声が出ていると自負している。ペンライトの振り方にもこだわりがあり、推しが見てくれた気がするだけで1週間は生きていける。終わったあとの余韻も含めてオタ活。",
+    name: "現場のムードメーカー",
+    description: "イベント会場で一番楽しそうにしている人。周りを巻き込む空気を作るのが得意で、初対面の人ともすぐ盛り上がれる。現場に立つだけでテンションが上がる。帰り道の感想戦も含めてオタ活。",
     aruaru: [
-      "ライブ翌日は声がガラガラ",
-      "ペンライトは推し色に即切り替え",
-      "帰り道のコンビニで余韻に浸る",
+      "イベント帰りの感想戦が本番",
+      "会場で偶然会った人と意気投合する",
+      "「楽しかった」だけで1週間は生きられる",
     ],
     compatGood: "SLUW",
     compatBad: "DNPR",
-    emoji: "📣"
+    emoji: "🎉"
   },
   "DLPR": {
-    name: "痛バの建築家",
-    description: "グッズの並べ方にこだわりがある。部屋の一角は推しの祭壇で、缶バッジやアクスタの配置には自分だけの美学がある。推しの情報は細かいところまで覚えていて、聞かれたら何でも答えられる。",
+    name: "ソロ活の巨匠",
+    description: "一人で黙々と現場に通い、情報やグッズをコツコツ集めるタイプ。コレクションの整理にはこだわりがあって、自分なりのまとめ方を持っている。寡黙だけど知識量は誰にも負けない。",
     aruaru: [
-      "推しのグッズは同じものを複数買う派",
-      "部屋の推しコーナーを定期的にアップデート",
-      "推しの過去の発言を正確に引用できる",
+      "一人で行動するのが最も効率が良い",
+      "コレクションの配置に自分だけの美学がある",
+      "好きなものの情報は細部まで覚えている",
     ],
     compatGood: "DNPR",
     compatBad: "SNUW",
-    emoji: "🏗️"
+    emoji: "🏛️"
   },
   "DLPW": {
     name: "深夜の錬金術師",
-    description: "現場で受けた感動を、帰ってから作品に変える夜行性タイプ。ライブや展示で感情が満タンになると創作衝動が止まらない。気づけば朝で「寝なきゃ」が口癖。好きの気持ちを形にしないと落ち着かない。",
+    description: "現場で受けた感動を、帰ってから作品に変える夜行性タイプ。展示やイベントで感情が満タンになると創作衝動が止まらない。気づけば朝で「寝なきゃ」が口癖。好きを形にしないと落ち着かない。",
     aruaru: [
       "現場の感動を帰ってすぐ作品にする",
       "「もう寝る」のあとに新作が生まれる",
@@ -101,14 +101,14 @@ const TYPES = {
     emoji: "🌙"
   },
 
-  // ──── Net × Oshi（ネットの推し職人）────
+  // ──── Net × Oshi（ネットの一途勢）────
   "SNPR": {
     name: "布教の大司教",
-    description: "「この人のここがすごい」を語らせたら止まらない。推しの魅力を的確にまとめて広めるのが得意。友達が推しを好きになってくれると、自分のことのように嬉しい。",
+    description: "「ここがすごい」を語らせたら止まらない。好きなものの魅力を的確にまとめて広めるのが得意。友達が自分の好きなものを好きになってくれると、自分のことのように嬉しくなるタイプ。",
     aruaru: [
-      "推しの魅力を語り出すと30分は止まらない",
-      "友達に推しを好きにさせた実績がある",
-      "推しの入門用おすすめリストを持っている",
+      "好きなものを語り出すと30分は止まらない",
+      "友達を沼に引きずり込んだ実績がある",
+      "入門用のおすすめリストを常に持っている",
     ],
     compatGood: "SLPR",
     compatBad: "DLUW",
@@ -116,42 +116,42 @@ const TYPES = {
   },
   "SNPW": {
     name: "TLの怪文書製造機",
-    description: "推しの新情報が出るたびに感情がダダ漏れになる。「今日も推しが最高だった」の報告は日課。好きが溢れすぎてポストの文字数が足りない。感情の振り幅がタイムラインのバロメーター。",
+    description: "好きなものの新情報が出るたびに感情がダダ漏れになる。「今日も最高だった」の報告は日課。好きが溢れすぎてポストの文字数が足りない。感情の振り幅がタイムラインのバロメーター。",
     aruaru: [
-      "推しの新ビジュアルで思考が停止する",
+      "新ビジュアルや新情報で思考が停止する",
       "「好き」しか言えなくなる瞬間がある",
-      "推しの画像フォルダの容量がヤバい",
+      "スクショフォルダの容量がヤバい",
     ],
     compatGood: "SLPW",
     compatBad: "DNUR",
     emoji: "📝"
   },
   "DNPR": {
-    name: "推しの年表職人",
-    description: "推しの出演歴や発言を細かく覚えている人間データベース。「それ、あの時のインタビューで言ってたよ」が自然に出てくる。情報の正確さには絶対の自信がある。",
+    name: "人間データベース",
+    description: "好きなものについての情報量が異常。聞かれたらすぐに正確な答えを出せる。記憶力と調査力が武器で、「それ、あの時の○○で言ってたよ」が自然に出てくる。情報の正確さには絶対の自信がある。",
     aruaru: [
-      "推しのプロフィール更新に誰より早く気づく",
-      "推しに関するクイズなら全問正解が当然",
-      "推しの活動履歴を年表で把握している",
+      "好きなもののプロフィール更新に誰より早く気づく",
+      "関連クイズなら全問正解が当然",
+      "活動履歴を時系列で把握している",
     ],
     compatGood: "DLPR",
     compatBad: "SLPW",
-    emoji: "📋"
+    emoji: "🗃️"
   },
   "DNPW": {
     name: "お気持ち表明マシン",
-    description: "推しに何かあるたびに感情が大爆発する。嬉しくて泣く、悲しくて泣く、尊くて泣く。感想は長文になりがちで、自分の感情を言語化するのに全力を注ぐタイプ。",
+    description: "好きなものに何かあるたびに感情が大爆発する。嬉しくて泣く、悲しくて泣く、尊くて泣く。感想は長文になりがちで、自分の感情を言語化するのに全力を注ぐタイプ。",
     aruaru: [
-      "推しの新曲で1日に3回泣いた",
+      "新作が出ると1日に3回泣く",
       "感想が140字に収まったことがない",
-      "泣きながら推しのコンテンツを繰り返し見る",
+      "泣きながらコンテンツを繰り返し見る",
     ],
     compatGood: "DLPW",
     compatBad: "SLUR",
     emoji: "💢"
   },
 
-  // ──── Live × World（現場の沼探検家）────
+  // ──── Live × World（現場の探検家）────
   "SLUR": {
     name: "聖地巡礼の修験者",
     description: "作品の舞台やモデルになった場所を実際に訪れたい派。「現地に行くと見え方が変わる」が持論で、フィールドワークこそオタ活の醍醐味。旅行先が自然と聖地になっている。",
@@ -165,12 +165,12 @@ const TYPES = {
     emoji: "🏔️"
   },
   "SLUW": {
-    name: "現場の渡り鳥",
-    description: "色んなイベントやオフ会に顔を出すフットワークの軽い人。ジャンルの壁を軽々と越えて、「今日はこっち、明日はあっち」のノリで動きまくる。初めての場所でもすぐ馴染める社交力の持ち主。",
+    name: "フッ軽のプロ",
+    description: "コミケ、オフ会、展示、上映会。色んなイベントに顔を出すフットワークの軽い人。ジャンルの壁を軽々と越えて「今日はこっち、明日はあっち」が日常。初めての場所でもすぐ馴染めるコミュ力の持ち主。",
     aruaru: [
       "年間の交通費が家賃を超えている",
       "初対面でも5分で仲良くなれる",
-      "スーツケースの荷造りが異常に速い",
+      "「行ける？」「行く」のやり取りが秒",
     ],
     compatGood: "SLPW",
     compatBad: "DNPR",
@@ -189,19 +189,19 @@ const TYPES = {
     emoji: "🔍"
   },
   "DLUW": {
-    name: "沼底の住人",
-    description: "映画館で何度も通ったり、書店で何時間も立ち読みしたり、現場で体感してこそのめり込める派。ハマったらとことん。「あともう1回だけ」が朝まで続く常習犯。生活リズムよりコンテンツが優先。",
+    name: "作品に住んでる人",
+    description: "ハマった世界から出てこないタイプ。映画館に何度も足を運んだり、展示に一人で没入したり、現場で体感してこそのめり込める派。「あともう1回だけ」が永遠に終わらない。",
     aruaru: [
-      "映画館に同じ作品を何度も観に行く",
-      "書店や中古ショップで気づけば2時間",
-      "睡眠時間を犠牲にしても後悔しない",
+      "同じ作品を映画館に何度も観に行く",
+      "展示会では閉館まで出てこない",
+      "没入しすぎて睡眠時間を犠牲にする",
     ],
     compatGood: "DNUW",
     compatBad: "SNPR",
-    emoji: "🫧"
+    emoji: "🏠"
   },
 
-  // ──── Net × World（ネットの沼住人）────
+  // ──── Net × World（ネットの住人）────
   "SNUR": {
     name: "弾幕アーティスト",
     description: "自分が好きなジャンルの面白さを広める案内人。解説や感想をまとめて「これ見て」と共有するのが好き。MAD動画の元ネタも全部わかるし、初心者に作品の入口を教えるのが上手い。",
@@ -399,18 +399,14 @@ function renderAxisBars() {
     const score = scores[axisKey];
     const percentage = Math.min(Math.abs(score) / maxScore * 100, 100);
     const isLeft = score >= 0;
-
     const row = document.createElement('div');
     row.className = 'result-axis-row';
-
     const leftLabel = document.createElement('span');
     leftLabel.className = 'result-axis-label';
     leftLabel.textContent = config.left.code;
     leftLabel.style.color = config.left.color;
-
     const bar = document.createElement('div');
     bar.className = 'result-axis-bar';
-
     const fill = document.createElement('div');
     fill.className = `result-axis-fill ${isLeft ? 'left' : 'right'}`;
     fill.style.background = isLeft ? config.left.color : config.right.color;
@@ -418,21 +414,17 @@ function renderAxisBars() {
     if (isLeft) { fill.style.left = '50%'; fill.style.right = 'auto'; }
     else { fill.style.right = '50%'; fill.style.left = 'auto'; }
     bar.appendChild(fill);
-
     const center = document.createElement('div');
     center.style.cssText = 'position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(0,0,0,0.1);';
     bar.appendChild(center);
-
     const rightLabel = document.createElement('span');
     rightLabel.className = 'result-axis-label';
     rightLabel.textContent = config.right.code;
     rightLabel.style.color = config.right.color;
-
     row.appendChild(leftLabel);
     row.appendChild(bar);
     row.appendChild(rightLabel);
     resultAxes.appendChild(row);
-
     requestAnimationFrame(() => {
       requestAnimationFrame(() => { fill.style.width = `${percentage / 2}%`; });
     });
